@@ -39,7 +39,7 @@ class DieSim:
         for j in range(self.min, (self.max * self.die) + 1):
             distribution[j] = 0.0
         for j in range(0, times):
-            distribution[die1.roll()] += 1.0
+            distribution[self.roll()] += 1.0
         for j in range(1, (self.max * self.die) + 1):
             distribution[j] /= times
         return distribution
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     die1 = DieSim(1, 6)
     die2 = DieSim(1, 6, 2)
 
-    print '----------PROBLEM 4----------'
+    print '\n----------PROBLEM 4----------'
     print 'Rolling 100 times.'
     distribution_1 = die1.roll_n(100)
 
@@ -59,9 +59,10 @@ if __name__ == '__main__':
 
     print 'Rolling 10,000 times.'
     distribution_3 = die1.roll_n(10000)
+
     print distribution_1, distribution_2, distribution_3
 
-    print '----------PROBLEM 5----------'
+    print '\n----------PROBLEM 5----------'
     print 'Rolling 100 times.'
     distribution_1 = die2.roll_n(100)
 
