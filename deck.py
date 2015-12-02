@@ -1,4 +1,5 @@
 from card import Card
+from random import shuffle
 
 
 class Deck:
@@ -13,7 +14,10 @@ class Deck:
                 self.cards.append(Card(i, j))
 
     def shuffle(self):
-        pass
+        """
+        Shuffle the deck.
+        """
+        shuffle(self.cards)
 
     def __repr__(self):
         return self.__str__()
