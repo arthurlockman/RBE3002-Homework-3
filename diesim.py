@@ -6,6 +6,7 @@ class DieSim:
     This class allows for simulating a "fair" die by using a random
     number generator.
     """
+
     def __init__(self, minimum, maximum, die=1):
         """
         Initialize the die sim.
