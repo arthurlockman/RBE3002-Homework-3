@@ -19,6 +19,13 @@ class Deck:
         """
         shuffle(self.cards)
 
+    def peek(self):
+        """
+        Peek at the top card on the deck.
+        :return: A card, the top card.
+        """
+        return self.cards[0]
+
     def __repr__(self):
         return self.__str__()
 
@@ -29,4 +36,12 @@ class Deck:
 if __name__ == '__main__':
     print 'Running deck sim.'
     deck = Deck()
-    print deck
+    trials = 0
+    draws = 0
+    for i in range(0, 1000000):
+        deck.shuffle()
+        card = deck.peek()
+        if card.rank == Card.ranks[0]:
+            draws += 1
+        trials += 1
+    print "Trials: ", trials, " Draws: ", draws, " Probability: ", (float(draws) / trials)
